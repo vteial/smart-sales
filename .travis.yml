@@ -1,10 +1,17 @@
-dist: xenial
+dist: trusty
 sudo: false
 
 language: node_js
 
 node_js:
   - "10"
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
 
 cache:
   directories:
@@ -20,6 +27,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/smart-sales-app
+  local_dir: dist/smart-sales
   on:
     branch: master
