@@ -8,6 +8,8 @@ import { NotFoundComponent } from './modules/general/not-found/not-found.compone
 import { HomeComponent } from './modules/general/home/home.component';
 import { SettingsComponent } from './modules/general/settings/settings.component';
 import { SignInComponent } from './modules/general/sign-in/sign-in.component';
+import { SignUpComponent } from './modules/general/sign-up/sign-up.component';
+import { CustomerListComponent } from './modules/application/customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { SignInComponent } from './modules/general/sign-in/sign-in.component';
     NotFoundComponent,
     HomeComponent,
     SettingsComponent,
-    SignInComponent
+    SignInComponent,
+    SignUpComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
