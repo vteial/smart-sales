@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxWebstorageModule} from 'ngx-webstorage';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AngularFireModule } from '@angular/fire';
@@ -35,7 +37,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
+    NgxWebstorageModule.forRoot(),
     SweetAlert2Module.forRoot(),
     BsDatepickerModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),

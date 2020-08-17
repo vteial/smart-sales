@@ -19,6 +19,7 @@ export class UserService {
 
   private RESOURCE = this.API_PREFIX + '/users';
 
+
   constructor(private httpClient: HttpClient) { }
 
   public get(): Observable<any> {
