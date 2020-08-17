@@ -15,34 +15,34 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarDefault">
           <ul class="navbar-nav">
-            <li class="nav-item " [class.example-class]="name == 'Home'">
+            <li class="nav-item " routerLinkActive="active">
               <a class="nav-link" routerLink="/home">
                 <i class="fas fa-home mr-1"></i> Home
               </a>
             </li>
-            <li class="nav-item " [class.example-class]="name == 'Home'">
+            <li class="nav-item " routerLinkActive="active">
               <a class="nav-link" routerLink="/customers">
                 <i class="fas fa-users mr-1"></i> Customers
               </a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item " [class.example-class]="name == 'Settings'">
+            <li class="nav-item " routerLinkActive="active">
               <a class="nav-link" routerLink="/settings">
                 <i class="fas fa-cogs mr-1"></i> Settings
               </a>
             </li>
-            <li class="nav-item " [class.example-class]="name == 'Sign Out'">
+            <li class="nav-item " routerLinkActive="active">
               <a class="nav-link" routerLink="/sign-out">
                 <i class="fas fa-sign-out-alt mr-1"></i> Sign Out
               </a>
             </li>
-            <li class="nav-item " [class.example-class]="name == 'Sign In'">
+            <li class="nav-item " routerLinkActive="active">
               <a class="nav-link" routerLink="/sign-in">
                 <i class="fas fa-sign-in-alt mr-1"></i> Sign In
               </a>
             </li>
-            <li class="nav-item " [class.example-class]="name == 'Sign Up'">
+            <li class="nav-item " routerLinkActive="active">
               <a class="nav-link" routerLink="/sign-up">
                 <i class="fas fa-user-plus mr-1"></i> Sign Up
               </a>
@@ -66,8 +66,11 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-10">
           <p class="text-center">&copy; 2020 - Smart Sales </p>
+        </div>
+        <div class="2">
+          <a routerLink="/workbench">Workbench</a>
         </div>
       </div>
     </div>
