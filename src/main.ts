@@ -13,7 +13,9 @@ if (window.location.hostname.indexOf('test') > -1) {
   environment.mode = 'test';
   environment.baseApiPrefix = 'https://nestmanagertest.pythonanywhere.com';
 }
-if (window.location.hostname.indexOf('localhost') > -1 || window.location.hostname.indexOf('dev') > -1) {
+if (window.location.hostname.indexOf('localhost') > -1
+  || window.location.hostname.indexOf('dev') > -1
+  || window.location.hostname.indexOf('nestzone') === -1) {
   environment.mode = 'dev';
   environment.baseApiPrefix = 'https://nestmanagerdev.pythonanywhere.com';
 }
