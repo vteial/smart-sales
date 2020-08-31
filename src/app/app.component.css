@@ -1,0 +1,15 @@
+#sidebar ul li.active > a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.profile-title {
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 1200px;
+}
