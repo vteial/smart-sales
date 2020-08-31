@@ -42,18 +42,17 @@ export class ApiService {
     this.sessionUser = null;
   }
 
-  // merchant
+  // field-config
 
-  getMerchants(): Observable<any> {
-    return this.httpClient.get(this.apiPrefix + '/merchant/list',
+  fetchFieldConfig(key: string): Observable<any> {
+    return this.httpClient.get(this.apiPrefix + '/field-config/' + key,
       {headers: new HttpHeaders({'x-token': this.sessionUser.accessToken})});
   }
 
-  // user
-
-  getUsers(): Observable<any> {
-    return this.httpClient.get(this.apiPrefix + '/user/list',
+  saveFieldConfig(key: string): Observable<any> {
+    return this.httpClient.post(this.apiPrefix + '/field-config/' + key,
       {headers: new HttpHeaders({'x-token': this.sessionUser.accessToken})});
   }
+
 }
 

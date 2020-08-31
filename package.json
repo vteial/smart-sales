@@ -23,6 +23,8 @@
     "@ngxs/devtools-plugin": "^3.6.2",
     "@ngxs/logger-plugin": "^3.6.2",
     "@ngxs/store": "^3.6.2",
+    "@rxweb/generics": "0.0.1-4",
+    "@rxweb/sanitizers": "0.0.1-1",
     "@sweetalert2/ngx-sweetalert2": "^8.1.1",
     "@sweetalert2/theme-bootstrap-4": "^3.2.0",
     "bootstrap": "^4.5.2",
