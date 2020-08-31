@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseApiPrefix: 'https://nestmanager.pythonanywhere.com'
+  baseApiPrefix: 'https://nestmanagerdev.pythonanywhere.com'
 };
