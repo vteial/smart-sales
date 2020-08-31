@@ -163,13 +163,4 @@ export class FieldConfig {
       });
     });
   }
-
-  asPayLoad(): any {
-    const payload = [];
-    payload.push({
-      section: 'specification',
-      fields: []
-    });
-    return payload;
-  }
 }

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {BaseComponent} from '../@shared/base.component';
 import {ApiService} from '../@shared/api.service';
-import {NgForm} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {FieldConfig} from '../@model/field.config';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {ClipboardService} from 'ngx-clipboard';
 
 @Component({
   selector: 'app-field-config',
@@ -12,9 +13,15 @@ import {FieldConfig} from '../@model/field.config';
 })
 export class FieldConfigComponent extends BaseComponent implements OnInit {
 
+  modalRef: BsModalRef;
+
   model = new FieldConfig();
 
-  constructor(private appService: ApiService, private toastr: ToastrService) {
+  constructor(
+    private appService: ApiService,
+    private toastr: ToastrService,
+    private modalService: BsModalService,
+    private clipboardService: ClipboardService) {
     super();
     super.viewName = 'Field Config';
   }
@@ -29,7 +36,7 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
+  onSubmit(template: TemplateRef<any>): void {
     this.toastr.clear();
     console.log('Property Category : ' + this.model.propCategory);
     if (this.model.propCategory === '-') {
@@ -41,8 +48,10 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
       this.toastr.error('Please select property type!', 'Erro!');
       return;
     }
-    console.log('AsPayLoad : ', this.model.asPayLoad());
-    this.toastr.success('Successfully saved!', 'Ok!');
+    this.clipboardService.copy(JSON.stringify(this.model.sections));
+    this.toastr.info('Payload copyied to clipboard!', 'Ok!');
+    // this.modalRef = this.modalService.show(template);
+    // this.toastr.success('Successfully saved!', 'Ok!');
   }
 
   onReset(): void {

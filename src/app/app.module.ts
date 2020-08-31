@@ -1,10 +1,12 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {ClipboardModule} from 'ngx-clipboard';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ModalModule} from 'ngx-bootstrap/modal';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {NgxsModule} from '@ngxs/store';
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
@@ -49,6 +51,7 @@ import { FieldConfigComponent } from './field-config/field-config.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ClipboardModule,
     NgxWebstorageModule.forRoot(),
     SweetAlert2Module.forRoot(),
     ToastrModule.forRoot({
@@ -56,6 +59,7 @@ import { FieldConfigComponent } from './field-config/field-config.component';
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     }),
+    ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     // NgxsModule.forRoot([
     //   TodoState
