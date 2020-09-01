@@ -46,12 +46,12 @@ export class ApiService {
 
   fetchFieldConfig(key: string): Observable<any> {
     return this.httpClient.get(this.apiPrefix + '/field-config/' + key,
-      {headers: new HttpHeaders({'x-token': this.sessionUser.accessToken})});
+      {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
   }
 
-  saveFieldConfig(key: string): Observable<any> {
+  saveFieldConfig(key: string, payLoad: any): Observable<any> {
     return this.httpClient.post(this.apiPrefix + '/field-config/' + key,
-      {headers: new HttpHeaders({'x-token': this.sessionUser.accessToken})});
+      payLoad, {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
   }
 
 }

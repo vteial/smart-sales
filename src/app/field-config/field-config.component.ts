@@ -27,16 +27,36 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.onReset();
+    this.resetForm();
+    this.resetModel();
   }
 
-  onSectionName(): void {
-    this.model.section = this.model.sections.find((o) => {
-      return o.name === this.model.sectionName;
+  resetForm(): void {
+    this.model = new FieldConfig();
+    this.model.userType = 'o';
+    this.model.propState = 'r';
+    this.model.propCategory = '-';
+    this.model.propType = '-';
+    this.resetModel();
+  }
+
+  fetchAndUpdate(): void {
+    if (this.model.propCategory === '-' || this.model.propType === '-') {
+      return;
+    }
+    this.appService.fetchFieldConfig(this.model.asKey()).subscribe((data: any) => {
+      this.model.propKey = this.model.asKey();
+      this.model.copyFrom(data);
     });
   }
 
-  onSubmit(template: TemplateRef<any>): void {
+  resetModel(): void {
+    this.model.propKey = this.model.asKey();
+    this.model.section = this.model.sections[0];
+    this.model.sectionName = this.model.section.name;
+  }
+
+  saveModel(): void {
     this.toastr.clear();
     console.log('Property Category : ' + this.model.propCategory);
     if (this.model.propCategory === '-') {
@@ -45,24 +65,28 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
     }
     console.log('Property Type : ' + this.model.propType);
     if (this.model.propType === '-') {
-      this.toastr.error('Please select property type!', 'Erro!');
+      this.toastr.error('Please select property type!', 'Error!');
       return;
     }
-    this.clipboardService.copy(JSON.stringify(this.model.sections));
-    this.toastr.info('Payload copyied to clipboard!', 'Ok!');
-    // this.modalRef = this.modalService.show(template);
-    // this.toastr.success('Successfully saved!', 'Ok!');
+    this.appService.saveFieldConfig(this.model.asKey(), [this.model.section]).subscribe((data: any) => {
+      console.log(data);
+      this.toastr.info('Successfully saved!', 'Ok!');
+    });
   }
 
-  onReset(): void {
-    this.model = new FieldConfig();
-    this.model.userType = 'o';
-    this.model.propState = 'r';
-    this.model.propCategory = '-';
-    this.model.propType = '-';
-    this.model.sectionName = 'Location';
-    this.model.section = this.model.sections[0];
-    // this.toastr.info('Successfully cleared!', 'Ok!');
+  copyPayLoadToClipboard(): void {
+    this.clipboardService.copy(JSON.stringify(this.model.sections));
+    this.toastr.info('Copied to clipboard!', 'Ok!');
+  }
+
+  showPayLoad(template: TemplateRef<any>): void {
+    this.modalRef = this.modalService.show(template, Object.assign({}, { class: 'gray modal-lg' }));
+  }
+
+  onSectionName(): void {
+    this.model.section = this.model.sections.find((o) => {
+      return o.name === this.model.sectionName;
+    });
   }
 
 }

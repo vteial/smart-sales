@@ -1,5 +1,5 @@
 
-<form #myform = "ngForm" (ngSubmit) = "onSubmit(template)">
+<form #form0 = "ngForm" (ngSubmit) = "fetchAndUpdate()">
   <h4 class="display-6">Basic Fields</h4>
   <div class="row">
     <div class="col">
@@ -20,15 +20,6 @@
               <i class="icon mdi mdi-heart"></i><label><b>Builder</b></label>
           </span>
         </span>
-        <!--
-        <span class="pretty p-default p-round p-thick mt-3">
-          <input type="radio" name="userTypeStar" value="*"
-                 [(ngModel)]="model.userType" name="userType"/>
-          <span class="state p-primary-o">
-              <i class="icon mdi mdi-heart"></i><label><b>Both</b></label>
-          </span>
-        </span>
-        -->
       </div>
     </div>
     <div class="col">
@@ -49,22 +40,13 @@
               <i class="icon mdi mdi-heart"></i><label><b>Sale</b></label>
           </span>
         </span>
-        <!--
-        <span class="pretty p-default p-round p-thick mt-3">
-          <input type="radio" name="propStateStar" value="*"
-                 [(ngModel)]="model.propState" name="propState"/>
-          <span class="state p-primary-o">
-              <i class="icon mdi mdi-heart"></i><label><b>Both</b></label>
-          </span>
-        </span>
-        -->
       </div>
     </div>
     <div class="col">
       <div class="form-group">
         <label>Property Category&nbsp;&nbsp;<code>*</code></label>
         <select class="form-control" [(ngModel)]="model.propCategory" name="propCategory">
-          <option value="-">&lt;Select Categorys&gt;</option>
+          <option value="-">&lt;Select Category&gt;</option>
           <option *ngFor="let o of model.categoryList" [value]="o.id">{{o.value}}</option>
         </select>
       </div>
@@ -78,14 +60,24 @@
         </select>
       </div>
     </div>
+    <div class="col">
+      <br/><button class="btn btn-info" type="submit" value="fetch"> Fetch </button>&nbsp;&nbsp;
+      <button class="btn btn-secondary" type="button" value="reset" (click)="resetForm()">Reset</button>
+    </div>
   </div>
+</form>
+
+<form #form1 = "ngForm" (ngSubmit) = "saveModel()">
   <hr/>
   <div class="row">
     <div class="col text-center">
-      <button class="btn btn-secondary" type="reset" value="Reset" (click)="onReset()">Reset</button>
+      <button class="btn btn-secondary" type="button" value="Copy" (click)="copyPayLoadToClipboard()">Copy PayLoad</button>
+      &nbsp;&nbsp;
+      <button class="btn btn-secondary" type="button" value="Show" (click)="showPayLoad(payLoadTemplate)">Show PayLoad</button>
+      &nbsp;&nbsp;
     </div>
     <div class="col text-center">
-        <span>Field Config Key : </span><b><code>{{model.userType}} {{model.propState}} {{model.propCategory}} {{model.propType}}</code></b>
+        <span>Field Config Key : </span><strong><code>{{model.propKey}}</code></strong>
     </div>
     <div class="col text-center">
       <button class="btn btn-primary" type="submit" value="Save"><i class="fas fa-save"></i> Save</button>
@@ -94,7 +86,7 @@
   <hr/>
   <div class="row">
     <div class="col">
-      <h4 class="display-6 mt-4">{{model.section.name}} Fields</h4>
+      <h4 class="display-6 mt-4 text-capitalize">{{model.section.name}} Fields</h4>
     </div>
     <div class="col">
       &nbsp;
@@ -172,25 +164,26 @@
     </tbody>
   </table>
   <div class="row">
-    <div class="col text-center">
-      <button class="btn btn-secondary" type="reset" value="Reset" (click)="onReset()">Reset</button>
+    <div class="col">&nbsp;</div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" type="submit" value="Save"><i class="fas fa-save"></i> Save</button>
     </div>
     <div class="col">&nbsp;</div>
-    <div class="col text-center">
-      <button class="btn btn-primary" type="submit" value="Save"><i class="fas fa-save"></i> Save</button>
-    </div>
   </div>
 </form>
 
-<ng-template #template>
+<ng-template #payLoadTemplate>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
+    <h4 class="modal-title pull-left">Pay Load</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <pre>{{model.sections | json}}</pre>
+    <pre>{{model.section | json}}</pre>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Ok</button>
   </div>
 </ng-template>
 
