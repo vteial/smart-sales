@@ -68,6 +68,7 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
       this.toastr.error('Please select property type!', 'Error!');
       return;
     }
+    console.log(this.model.section);
     this.appService.saveFieldConfig(this.model.asKey(), [this.model.section]).subscribe((data: any) => {
       console.log(data);
       this.toastr.info('Successfully saved!', 'Ok!');

@@ -8,6 +8,10 @@
   font-weight: bold;
 }
 
+#content-main {
+  min-height: 600px;
+}
+
 /*footer {*/
 /*  position: absolute;*/
 /*  bottom: 0;*/
