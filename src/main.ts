@@ -14,10 +14,13 @@ if (window.location.hostname.indexOf('test') > -1) {
   environment.baseApiPrefix = 'https://nestmanagertest.pythonanywhere.com';
 }
 if (window.location.hostname.indexOf('localhost') > -1
-  || window.location.hostname.indexOf('dev') > -1
-  || window.location.hostname.indexOf('nestzone') === -1) {
+  || window.location.hostname.indexOf('dev') > -1) {
   environment.mode = 'dev';
   environment.baseApiPrefix = 'https://nestmanagerdev.pythonanywhere.com';
+}
+if (window.location.hostname.indexOf('github') > -1) {
+  environment.mode = 'propd';
+  environment.baseApiPrefix = 'https://nestmanager.pythonanywhere.com';
 }
 // console.log(document.location.search);
 const usp = new URLSearchParams(document.location.search);

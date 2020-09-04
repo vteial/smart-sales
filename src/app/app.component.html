@@ -12,8 +12,7 @@
       <h1><a href="index.html" class="logo">{{appTitle}}</a></h1>
       <div *ngIf="sessionUser != null">
         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" alt="avatar">
-        <h5 class="profile-title"><b>{{sessionUser.name}}</b></h5>
-        <h5 class="profile-title"><b>{{sessionUser.role}}</b></h5>
+        <h5 class="profile-title"><b>{{sessionUser.username}} / {{sessionUser.roleName}}</b></h5>
       </div>
       <ul class="list-unstyled components mb-5" *ngIf="sessionUser != null">
         <li routerLinkActive="active">
@@ -74,10 +73,16 @@
     </main>
     <footer class="mt-auto py-2 bg-white">
       <hr class="bg-warning"/>
-      <p class="text-muted">
-        &copy; 2020 - {{appTitle}} - {{appDescription}}
-        <span><a routerLink="/workbench">Workbench</a></span>
-      </p>
+      <div class="row">
+        <div class="col-md-8">
+          <p class="text-muted">
+            &copy; 2020 - {{appTitle}} - {{appDescription}}
+          </p>
+        </div>
+        <div class="col-md-4 text-right">
+          <a routerLink="/workbench">Workbench</a>
+        </div>
+      </div>
     </footer>
 
   </div>

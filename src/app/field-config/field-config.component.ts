@@ -5,6 +5,7 @@ import {ToastrService} from 'ngx-toastr';
 import {FieldConfig} from '../@model/field.config';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {ClipboardService} from 'ngx-clipboard';
+import {PrettyCheckBoxChange} from 'ngx-pretty-checkbox';
 
 @Component({
   selector: 'app-field-config',
@@ -84,10 +85,17 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
     this.modalRef = this.modalService.show(template, Object.assign({}, { class: 'gray modal-lg' }));
   }
 
+  onUserType(event: PrettyCheckBoxChange): void {
+    this.model.userType = event.value;
+  }
+
+  onPropState(event: PrettyCheckBoxChange): void {
+    this.model.propState = event.value;
+  }
+
   onSectionName(): void {
     this.model.section = this.model.sections.find((o) => {
       return o.name === this.model.sectionName;
     });
   }
-
 }

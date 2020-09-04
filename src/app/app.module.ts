@@ -1,11 +1,15 @@
-import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RxReactiveFormsModule} from '@rxweb/reactive-form-validators';
 import {ClipboardModule} from 'ngx-clipboard';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+import {NgxPrettyCheckboxModule} from 'ngx-pretty-checkbox';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {NgxsModule} from '@ngxs/store';
@@ -25,7 +29,6 @@ import {WorkbenchComponent} from './workbench/workbench.component';
 import {TodoState} from './workbench/todo/todo';
 import { TodoListComponent } from './workbench/todo/todo-list/todo-list.component';
 import { TodoEditComponent } from './workbench/todo/todo-edit/todo-edit.component';
-import {ToastrModule} from 'ngx-toastr';
 import { FieldConfigComponent } from './field-config/field-config.component';
 
 @NgModule({
@@ -48,12 +51,14 @@ import { FieldConfigComponent } from './field-config/field-config.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    RxReactiveFormsModule,
     ClipboardModule,
     NgxWebstorageModule.forRoot(),
     SweetAlert2Module.forRoot(),
+    NgxPrettyCheckboxModule,
     ToastrModule.forRoot({
       timeOut: 5000,
       positionClass: 'toast-top-center',
@@ -61,6 +66,7 @@ import { FieldConfigComponent } from './field-config/field-config.component';
     }),
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    InfiniteScrollModule,
     // NgxsModule.forRoot([
     //   TodoState
     // ]),
