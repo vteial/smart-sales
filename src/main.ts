@@ -19,7 +19,7 @@ if (window.location.hostname.indexOf('localhost') > -1
   environment.baseApiPrefix = 'https://nestmanagerdev.pythonanywhere.com';
 }
 if (window.location.hostname.indexOf('github') > -1) {
-  environment.mode = 'propd';
+  environment.mode = 'prod';
   environment.baseApiPrefix = 'https://nestmanager.pythonanywhere.com';
 }
 // console.log(document.location.search);
