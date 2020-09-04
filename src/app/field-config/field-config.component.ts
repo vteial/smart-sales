@@ -47,7 +47,13 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
     }
     this.appService.fetchFieldConfig(this.model.asKey()).subscribe((data: any) => {
       this.model.propKey = this.model.asKey();
-      this.model.copyFrom(data);
+      this.resetModel();
+      if (data.length > 0) {
+        this.model.copyFrom(data);
+        this.toastr.info('Successfully loaded existing configuration.');
+      } else {
+        this.toastr.warning('There is no existing configuration.');
+      }
     });
   }
 
