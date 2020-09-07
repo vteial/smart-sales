@@ -12,7 +12,8 @@
       <h1><a href="index.html" class="logo">{{appTitle}}</a></h1>
       <div *ngIf="sessionUser != null" class="text-center">
         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" alt="avatar">
-        <h5 class="profile-title"><b>{{sessionUser.name}} / {{sessionUser.role}}</b></h5>
+        <h5 class="profile-title"><b>{{sessionUser.name}}</b></h5>
+        <h5 class="profile-title"><b>{{sessionUser.role}}</b></h5>
       </div>
       <ul class="list-unstyled components mb-5" *ngIf="sessionUser != null">
         <li routerLinkActive="active">

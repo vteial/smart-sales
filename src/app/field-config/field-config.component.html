@@ -83,7 +83,7 @@
         </select>
       </div>
     </div>
-    <div class="col">
+    <div class="col text-center">
       <br/><button class="btn btn-info" type="submit" value="fetch"> Fetch </button>&nbsp;&nbsp;
       <button class="btn btn-secondary" type="button" value="reset" (click)="resetForm()">Reset</button>
     </div>
@@ -93,38 +93,57 @@
 <form #form1 = "ngForm" (ngSubmit) = "saveModel()">
   <hr/>
   <div class="row">
-    <div class="col text-center">
-      <button class="btn btn-secondary" type="button" value="Copy" (click)="copyPayLoadToClipboard()">Copy PayLoad</button>
+    <div class="col-md-6">
+      <button class="btn btn-secondary" type="button" value="export" (click)="export()">Export</button>
       &nbsp;&nbsp;
+      <!--
       <button class="btn btn-secondary" type="button" value="Show" (click)="showPayLoad(payLoadTemplate)">Show PayLoad</button>
-      &nbsp;&nbsp;
+      -->
     </div>
-    <div class="col text-center">
-        <span>Field Config Key : </span><strong><code>{{model.propKey}}</code></strong>
-    </div>
-    <div class="col text-center">
-      <button class="btn btn-primary" type="submit" value="Save"><i class="fas fa-save"></i> Save</button>
+    <div class="col-md-6 text-center">
+      <div class="row">
+        <div class="col">
+          <label class="mt-2">Field Config Key&nbsp;&nbsp;<code>*</code></label>
+        </div>
+        <div class="col">
+          <select class="form-control" [(ngModel)]="model.propKeySelected" name="propKeySelected">
+            <option value="-">&lt;Select Field Key&gt;</option>
+            <option *ngFor="let o of model.propKeyList" [value]="o">{{o}}</option>
+          </select>
+        </div>
+        <div class="col">
+          <button class="btn btn-secondary" type="button" value="import" (click)="import()">Import</button>
+        </div>
+      </div>
     </div>
   </div>
   <hr/>
   <div class="row">
-    <div class="col">
+    <div class="col-md-3">
       <h4 class="display-6 mt-4 text-capitalize">{{model.section.name}} Fields</h4>
     </div>
-    <div class="col">
-      &nbsp;
+    <div class="col-md-3">
+      <br/>
+      <div><span>Field Config Key : </span><strong><code>{{model.propKey}}</code></strong></div>
     </div>
-    <div class="col">
-      <div class="form-group">
-        <label>Section&nbsp;&nbsp;<code>*</code></label>
-        <select class="form-control" [(ngModel)]="model.sectionName" name="sectionName"
-          (change)="onSectionName()">
-          <option *ngFor="let o of model.sections" [value]="o.name">{{o.name}}</option>
-        </select>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="mt-2">Section&nbsp;&nbsp;<code>*</code></label>
+        </div>
+        <div class="col-md-8">
+          <select class="form-control" [(ngModel)]="model.sectionName" name="sectionName"
+                  (change)="onSectionName()">
+            <option *ngFor="let o of model.sections" [value]="o.name">{{o.name}}</option>
+          </select>
+        </div>
       </div>
     </div>
+    <div class="col-md-2 text-center">
+      <button class="btn btn-primary" type="submit" value="save"><i class="fas fa-save"></i> Save</button>
+    </div>
   </div>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-hover">
     <thead>
     <tr>
       <th width="30">#</th>
@@ -143,10 +162,10 @@
         <div class="pretty p-default p-toggle">
           <input type="checkbox" [(ngModel)]="item.edit" name="{{item.name}}Edit"/>
           <div class="state p-success p-on">
-            <label>Yes</label>
+            <label class="text-success">Yes</label>
           </div>
           <div class="state p-danger p-off">
-            <label>No</label>
+            <label class="text-danger">No</label>
           </div>
         </div>
       </td>
@@ -154,10 +173,10 @@
         <div class="pretty p-default p-toggle">
           <input type="checkbox" [(ngModel)]="item.view" name="{{item.name}}View"/>
           <div class="state p-success p-on">
-            <label>Yes</label>
+            <label class="text-success">Yes</label>
           </div>
           <div class="state p-danger p-off">
-            <label>No</label>
+            <label class="text-danger">No</label>
           </div>
         </div>
       </td>
@@ -165,10 +184,10 @@
         <div class="pretty p-default p-toggle">
           <input type="checkbox" [(ngModel)]="item.mandatory" name="{{item.name}}Mandatory"/>
           <div class="state p-success p-on">
-            <label>Yes</label>
+            <label class="text-success">Yes</label>
           </div>
           <div class="state p-danger p-off">
-            <label>No</label>
+            <label class="text-danger">No</label>
           </div>
         </div>
       </td>
@@ -187,17 +206,22 @@
     </tbody>
   </table>
   <div class="row">
-    <div class="col">&nbsp;</div>
     <div class="col">
-      <button class="btn btn-primary btn-block" type="submit" value="Save"><i class="fas fa-save"></i> Save</button>
+      <button class="btn btn-warning btn-block" type="button" value="saveAll"
+              (click)="saveAll()">
+        <i class="fas fa-save"></i> Save All
+      </button>
     </div>
     <div class="col">&nbsp;</div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" type="submit" value="save"><i class="fas fa-save"></i> Save</button>
+    </div>
   </div>
 </form>
 
 <ng-template #payLoadTemplate>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Pay Load</h4>
+    <h4 class="modal-title float-left">Pay Load</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>

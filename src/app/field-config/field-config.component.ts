@@ -38,14 +38,23 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
     this.model.propState = 'r';
     this.model.propCategory = '-';
     this.model.propType = '-';
+    this.model.propKeySelected = '-';
     this.resetModel();
   }
 
   fetchAndUpdate(): void {
-    if (this.model.propCategory === '-' || this.model.propType === '-') {
+    this.toastr.clear();
+    // console.log('Property Category : ' + this.model.propCategory);
+    if (this.model.propCategory === '-') {
+      this.toastr.error('Please select property category!');
       return;
     }
-    this.appService.fetchFieldConfig(this.model.asKey()).subscribe((data: any) => {
+    // console.log('Property Type : ' + this.model.propType);
+    if (this.model.propType === '-') {
+      this.toastr.error('Please select property type!');
+      return;
+    }
+    this.appService.fetchExistingFieldConfig(this.model.asKey()).subscribe((data: any) => {
       this.model.propKey = this.model.asKey();
       this.resetModel();
       if (data.length > 0) {
@@ -65,26 +74,66 @@ export class FieldConfigComponent extends BaseComponent implements OnInit {
 
   saveModel(): void {
     this.toastr.clear();
-    console.log('Property Category : ' + this.model.propCategory);
+    // console.log('Property Category : ' + this.model.propCategory);
     if (this.model.propCategory === '-') {
-      this.toastr.error('Please select property category!', 'Error!');
+      this.toastr.error('Please select property category!');
       return;
     }
-    console.log('Property Type : ' + this.model.propType);
+    // console.log('Property Type : ' + this.model.propType);
     if (this.model.propType === '-') {
-      this.toastr.error('Please select property type!', 'Error!');
+      this.toastr.error('Please select property type!');
       return;
     }
-    console.log(this.model.section);
+    // console.log(this.model.section);
     this.appService.saveFieldConfig(this.model.asKey(), [this.model.section]).subscribe((data: any) => {
       console.log(data);
-      this.toastr.info('Successfully saved!', 'Ok!');
+      this.toastr.success('Successfully saved!');
     });
   }
 
-  copyPayLoadToClipboard(): void {
+  saveAll(): void {
+    this.toastr.clear();
+    // console.log('Property Category : ' + this.model.propCategory);
+    if (this.model.propCategory === '-') {
+      this.toastr.error('Please select property category!');
+      return;
+    }
+    // console.log('Property Type : ' + this.model.propType);
+    if (this.model.propType === '-') {
+      this.toastr.error('Please select property type!');
+      return;
+    }
+    // console.log(this.model.sections);
+    this.appService.saveFieldConfig(this.model.asKey(), this.model.sections).subscribe((data: any) => {
+      console.log(data);
+      this.toastr.success('Successfully saved!');
+    });
+  }
+
+  import(): void {
+    console.log(this.model.propKeySelected);
+    if (this.model.propKeySelected === '-') {
+      this.toastr.error('Please select field config key!');
+      return;
+    }
+    this.appService.fetchStaticFieldConfig(this.model.propKeySelected).subscribe((data: any) => {
+      // this.resetModel();
+      if (data.length > 0) {
+        this.model.copyFrom(data);
+        this.toastr.warning('Successfully imported. Don"t forget to save the imported configuration.');
+      } else {
+        this.toastr.warning('There is no existing configuration.');
+      }
+    });
+  }
+
+  export(): void {
+    this.exportToClipboard();
+  }
+
+  exportToClipboard(): void {
     this.clipboardService.copy(JSON.stringify(this.model.sections));
-    this.toastr.info('Copied to clipboard!', 'Ok!');
+    this.toastr.info('Copied to clipboard!');
   }
 
   showPayLoad(template: TemplateRef<any>): void {

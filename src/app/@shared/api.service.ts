@@ -44,14 +44,49 @@ export class ApiService {
 
   // field-config
 
-  fetchFieldConfig(key: string): Observable<any> {
+  fetchStaticFieldConfig(key: string): Observable<any> {
+    return this.httpClient.get( 'assets/data/' + key + '.json');
+  }
+
+  fetchExistingFieldConfig(key: string): Observable<any> {
     return this.httpClient.get(this.apiPrefix + '/field-config/' + key,
       {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
   }
 
-  saveFieldConfig(key: string, payLoad: any): Observable<any> {
-    return this.httpClient.post(this.apiPrefix + '/field-config/' + key,
+  saveFieldConfig(id: string, payLoad: any): Observable<any> {
+    return this.httpClient.post(this.apiPrefix + '/field-config/' + id,
       payLoad, {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
+  }
+
+  // testimonials
+
+  fetchTestimonials(): Observable<any> {
+    return this.httpClient.get(this.apiPrefix + '/testimonials',
+      {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
+  }
+
+  saveTestimonial(id: string, payLoad: any): Observable<any> {
+    return this.httpClient.post(this.apiPrefix + '/testimonial/' + id,
+      payLoad, {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
+  }
+
+  // company-info
+
+  fetchCompanyInfo(): Observable<any> {
+    return this.httpClient.get(this.apiPrefix + '/company-info',
+      {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
+  }
+
+  saveCompanyInfo(payLoad: any): Observable<any> {
+    return this.httpClient.post(this.apiPrefix + '/company-info',
+      payLoad, {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
+  }
+
+  // contacts
+
+  fetchContacts(): Observable<any> {
+    return this.httpClient.get(this.apiPrefix + '/contacts',
+      {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
   }
 
 }

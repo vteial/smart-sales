@@ -4,156 +4,156 @@
     "fields": [
       {
         "name": "air_conditioner",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "children_play_area",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "club_house",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "fire_safety",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "gas_pipeline",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "gated_security",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "gym",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "house_keeping",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "inter_com",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "internet_services",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "lift",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "non_veg",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "park",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "power_backup",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "rain_water_harvesting",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "servant_room",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "sewage_treatment",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "shopping_center",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "swimming_pool",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "veg",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "visitor_parking",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "water_supply",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       }
     ]
@@ -163,16 +163,16 @@
     "fields": [
       {
         "name": "buildup_area",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "buildup_area_unit",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
@@ -214,42 +214,42 @@
         "name": "plot_area",
         "edit": true,
         "view": true,
-        "mandatory": true,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "plot_area_unit",
         "edit": true,
         "view": true,
-        "mandatory": true,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "plot_breadth",
         "edit": true,
         "view": true,
-        "mandatory": true,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "plot_length",
         "edit": true,
         "view": true,
-        "mandatory": true,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "super_area",
         "edit": true,
         "view": true,
-        "mandatory": true,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "super_area_unit",
         "edit": true,
         "view": true,
-        "mandatory": true,
+        "mandatory": false,
         "numeric": false
       }
     ]
@@ -306,8 +306,8 @@
     "fields": [
       {
         "name": "cabin_meeting_rooms",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       },
@@ -320,22 +320,22 @@
       },
       {
         "name": "near_by_business",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       },
       {
         "name": "no_of_seats",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       },
       {
         "name": "open_hours",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       },
@@ -388,9 +388,9 @@
       },
       {
         "name": "total_units",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       }
     ]
@@ -402,20 +402,20 @@
         "name": "floors_allowed_to_be_constructed",
         "edit": true,
         "view": true,
-        "mandatory": false,
+        "mandatory": true,
         "numeric": false
       },
       {
         "name": "rera_id",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       },
       {
         "name": "url",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       }
@@ -482,14 +482,14 @@
         "name": "boundary_wall",
         "edit": true,
         "view": true,
-        "mandatory": false,
+        "mandatory": true,
         "numeric": false
       },
       {
         "name": "property_ownership",
         "edit": true,
         "view": true,
-        "mandatory": false,
+        "mandatory": true,
         "numeric": false
       }
     ]
@@ -527,9 +527,9 @@
       },
       {
         "name": "complete_price_details",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
@@ -537,20 +537,20 @@
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "exclude_stamp_duty_registration_charges",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "facing_plc",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
@@ -562,23 +562,23 @@
       },
       {
         "name": "free_car_parking",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "free_club_membership",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "free_covered_car_parking",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
@@ -590,30 +590,30 @@
       },
       {
         "name": "free_open_car_parking",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "free_other_charges",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "free_power_backup",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "lock_in_period",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
@@ -621,7 +621,7 @@
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "maintenance_window",
@@ -635,20 +635,20 @@
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "power_backup_cost",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "price_per_seat",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
@@ -656,35 +656,35 @@
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "security_amount",
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "stamp_duty_registration_charges",
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "total_price",
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "total_price_per_sqft",
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       }
     ]
   },
@@ -693,8 +693,8 @@
     "fields": [
       {
         "name": "corner_shop",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       },
@@ -702,13 +702,13 @@
         "name": "main_road_facing",
         "edit": true,
         "view": true,
-        "mandatory": false,
+        "mandatory": true,
         "numeric": false
       },
       {
         "name": "width_of_entrance",
-        "edit": true,
-        "view": true,
+        "edit": false,
+        "view": false,
         "mandatory": false,
         "numeric": false
       }
@@ -775,16 +775,16 @@
       },
       {
         "name": "open_sides",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
         "name": "pantry",
-        "edit": true,
-        "view": true,
-        "mandatory": true,
+        "edit": false,
+        "view": false,
+        "mandatory": false,
         "numeric": false
       },
       {
@@ -792,7 +792,7 @@
         "edit": true,
         "view": true,
         "mandatory": true,
-        "numeric": false
+        "numeric": true
       },
       {
         "name": "tenant_preferred",

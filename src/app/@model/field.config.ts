@@ -29,6 +29,21 @@ export class FieldConfig {
   ];
   categoryType = {};
 
+  userType: string;
+  propState: string;
+  propCategory: string;
+  propType: string;
+
+  propKeyList = [
+    'brca',
+    'orrf',
+    'orrg',
+    'osre',
+    'osrf',
+    'osrg'
+  ];
+  propKeySelected: string;
+  propKey: string;
   sections = [
     {
       name: 'price_details', fields: [
@@ -184,12 +199,6 @@ export class FieldConfig {
     }
   ];
   sectionsMap = {};
-
-  userType: string;
-  propState: string;
-  propCategory: string;
-  propType: string;
-  propKey: string;
   sectionName: string;
   section: any;
 
@@ -211,10 +220,10 @@ export class FieldConfig {
     });
     this.sections = this.sections.sort((n1, n2) => {
       if (n1.name > n2.name) {
-        return 1;
+        return -1;
       }
       if (n1.name < n2.name) {
-        return -1;
+        return 1;
       }
       return 0;
     });

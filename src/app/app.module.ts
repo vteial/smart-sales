@@ -12,24 +12,18 @@ import {NgxPrettyCheckboxModule} from 'ngx-pretty-checkbox';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
-import {NgxsModule} from '@ngxs/store';
-import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
-import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
-
-import {environment} from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HomeComponent} from './home/home.component';
-// import {SettingsComponent} from './modules/general/settings/settings.component';
+import {SettingsComponent} from './settings/settings.component';
+import {FieldConfigComponent} from './field-config/field-config.component';
+import {TestimonialComponent} from './testimonial/testimonial.component';
 import {SignInComponent} from './sign-in/sign-in.component';
 import {SignOutComponent} from './sign-out/sign-out.component';
-// import {CustomerListComponent} from './modules/application/customer-list/customer-list.component';
 import {WorkbenchComponent} from './workbench/workbench.component';
-import {TodoState} from './workbench/todo/todo';
-import { TodoListComponent } from './workbench/todo/todo-list/todo-list.component';
-import { TodoEditComponent } from './workbench/todo/todo-edit/todo-edit.component';
-import { FieldConfigComponent } from './field-config/field-config.component';
+import {TodoListComponent} from './workbench/todo/todo-list/todo-list.component';
+import {TodoEditComponent} from './workbench/todo/todo-edit/todo-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +31,9 @@ import { FieldConfigComponent } from './field-config/field-config.component';
     NotFoundComponent,
     WorkbenchComponent,
     HomeComponent,
-    // CustomerListComponent,
-    // ContactListComponent,
-    // TestimonialListComponent,
+    SettingsComponent,
     FieldConfigComponent,
-    // SettingsComponent,
+    TestimonialComponent,
     SignOutComponent,
     SignInComponent,
     TodoListComponent,
