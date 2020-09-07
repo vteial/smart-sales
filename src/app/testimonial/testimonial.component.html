@@ -1,24 +1,61 @@
-<!--
-<table class="table table-sm table-bordered table-hover">
-  <thead>
-  <tr>
-    <th scope="col" width="40">#</th>
-    <th scope="col">Name</th>
-    <th scope="col">Designation</th>
-    <th scope="col" width="40">&nbsp;</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let item of items; index as i;">
-    <td class="text-right">{{i+1}}</td>
-    <td>{{item.name}}</td>
-    <td>{{item.designation}}</td>
-    <td class="text-center">
-      <button class="btn btn-link btn-sm" (click)="view(item)">
-        <i class="fas fa-edit"></i>
+<div class="row">
+  <div class="col">
+    <div class="mb-5">
+      <button class="btn btn-outline-primary float-right" (click)="add()">
+        <i class="fas fa-plus"></i> Add
       </button>
-    </td>
-  </tr>
-  </tbody>
-</table>
--->
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th scope="col" width="40">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Designation</th>
+        <th scope="col" width="40">&nbsp;</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items; index as i;">
+        <td class="text-right">{{i+1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.designation}}</td>
+        <td class="text-center">
+          <button class="btn btn-link btn-sm" (click)="edit(item)">
+            <i class="fas fa-edit"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <form [formGroup]="itemFormGroup" (ngSubmit)="save()">
+      <div class="form-group">
+        <label>Name <code>*</code></label>
+        <input type="text" formControlName="name" class="form-control"  />
+        <div class="invalid-feedback" *ngIf="itemFormGroup.controls.name.errors">
+          {{itemFormGroup.controls.name.errors.alpha.message}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Designation <code>*</code></label>
+        <input type="text" formControlName="designation" class="form-control"  />
+        <div class="invalid-feedback" *ngIf="itemFormGroup.controls.designation.errors">
+          {{itemFormGroup.controls.designation.errors.alpha.message}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Description <code>*</code></label>
+        <textarea formControlName="description" class="form-control" rows="8"></textarea>
+        <div class="invalid-feedback" *ngIf="itemFormGroup.controls.description.errors">
+          {{itemFormGroup.controls.description.errors.alpha.message}}
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit" value="save">
+          <i class="fas fa-save"></i> Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
