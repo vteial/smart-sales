@@ -29,7 +29,7 @@ export class TestimonialComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService.fetchTestimonials().subscribe((data: any) => {
-      console.log(data);
+      // console.log(data);
       this.copy(data);
       this.edit(this.items[0]);
     });
@@ -47,7 +47,7 @@ export class TestimonialComponent extends BaseComponent implements OnInit {
 
   save(): void {
     this.appService.saveTestimonial('' + this.item.id, this.item).subscribe((data: any) => {
-      console.log(data);
+      // console.log(data);
       this.toastr.success('Successfully saved...');
     });
   }

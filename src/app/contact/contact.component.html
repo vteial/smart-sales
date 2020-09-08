@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col">
+    <br/>
+    <table class=" table table-bordered table-striped card-table mg-b-0 text-md-nowrap">
+      <thead>
+        <tr>
+          <th scope="col" width="40">#</th>
+          <th scope="col" class="text-center">Name</th>
+          <th scope="col" class="text-center">Date</th>
+          <th scope="col" width="40">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items; index as i;">
+        <td class="text-right">{{i+1}}</td>
+        <td class="text-capitalize">{{item.name}}</td>
+        <td class="text-center">{{item.time | date : 'dd - mm - yyyy  HH : MM'}}</td>
+        <td>
+          <button class="btn btn-link btn-sm" (click)="view(item)">
+            <i class="fas fa-edit"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="display-5">Contact Detail</h5>
+      </div>
+      <div class="card-body">
+        <div>
+          Name : <span class="text-warning">{{item.name}}</span>
+        </div>
+        <br/>
+        <div>
+            Phone : <span class="text-warning">{{item.phone}}</span>
+        </div>
+        <br/>
+        <div>
+            Email : <span class="text-warning">{{item.email}}</span>
+        </div>
+        <br/>
+        <div>
+          Subject : <span class="text-warning">{{item.subject}}</span>
+        </div>
+        <br/>
+        <div>
+          Message
+        </div>
+        <br/>
+        <div>
+          <span class="text-warning">{{item.message}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

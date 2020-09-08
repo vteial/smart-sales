@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {LocalStorage} from 'ngx-webstorage';
 import {environment} from '../../environments/environment';
@@ -45,7 +45,7 @@ export class ApiService {
   // field-config
 
   fetchStaticFieldConfig(key: string): Observable<any> {
-    return this.httpClient.get( 'assets/data/' + key + '.json');
+    return this.httpClient.get('assets/data/' + key + '.json');
   }
 
   fetchExistingFieldConfig(key: string): Observable<any> {
@@ -70,6 +70,13 @@ export class ApiService {
       payLoad, {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
   }
 
+  // contacts
+
+  fetchContacts(): Observable<any> {
+    return this.httpClient.get(this.apiPrefix + '/contacts',
+      {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
+  }
+
   // company-info
 
   fetchCompanyInfo(): Observable<any> {
@@ -80,13 +87,6 @@ export class ApiService {
   saveCompanyInfo(payLoad: any): Observable<any> {
     return this.httpClient.post(this.apiPrefix + '/company-info',
       payLoad, {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
-  }
-
-  // contacts
-
-  fetchContacts(): Observable<any> {
-    return this.httpClient.get(this.apiPrefix + '/contacts',
-      {headers: new HttpHeaders({'x-token': this.sessionUser.token})});
   }
 
 }

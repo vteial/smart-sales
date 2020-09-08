@@ -16,9 +16,10 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HomeComponent} from './home/home.component';
-import {SettingsComponent} from './settings/settings.component';
-import {FieldConfigComponent} from './field-config/field-config.component';
+import {ContactComponent} from './contact/contact.component';
 import {TestimonialComponent} from './testimonial/testimonial.component';
+import {FieldConfigComponent} from './field-config/field-config.component';
+import {SettingsComponent} from './settings/settings.component';
 import {SignInComponent} from './sign-in/sign-in.component';
 import {SignOutComponent} from './sign-out/sign-out.component';
 import {WorkbenchComponent} from './workbench/workbench.component';
@@ -38,6 +39,7 @@ import {TodoEditComponent} from './workbench/todo/todo-edit/todo-edit.component'
     SignInComponent,
     TodoListComponent,
     TodoEditComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
